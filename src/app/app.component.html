@@ -1,0 +1,39 @@
+<div style="position: fixed; top: 0; width: 100%; padding-bottom: 5px;" class="bg-primary" id="top-div">
+  <h1 class="text-center" style="color: rgb(43, 43, 43);">FlytBase</h1>
+  <div class="row" style="padding: 0px 20px 0px 5px;">
+    <div class="col-12">
+      <span style="color:rgb(43, 43, 43);">
+        <h5>Drone Direction: {{direction | uppercase}}</h5>
+        <button (click)="changeDirection()" class="btn btn-success">Change Direction</button>&nbsp;
+        <button (click)="database()" style="position: absolute;" class="btn btn-info">Database</button>
+        <button (click)="reset()" style="position: absolute; right: 0;" class="btn btn-danger">Reset</button><br>
+      </span>
+    </div>
+
+  </div>
+</div>
+<div class="container-fluid" id="table-div">
+  <table class="table-responsive">
+    <thead>
+      <tr>
+        <th></th>
+        <th *ngFor="let n of column">
+          <div class="textColor" *ngIf="n!=0">C{{n}}</div>
+          <div *ngIf="n==0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let m of row">
+        <th>
+          <div class="textColor">R{{m}}</div>
+        </th>
+        <td *ngFor="let n of column">
+          <div class="greyBack" *ngIf="n!=0" (click)=select(m,n) name="cell" id="R{{m}}C{{n}}"></div>
+          <div *ngIf="n==0"></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<router-outlet></router-outlet>

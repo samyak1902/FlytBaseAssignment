@@ -1,0 +1,17 @@
+.textColor{
+    color: rgb(110, 110, 110);
+    width: 35px;
+    height: 24px;
+    text-align: center;
+}
+div[id^="R"]:hover{
+    cursor:pointer;
+}
+.greyBack{
+    background-color: rgb(110, 110, 110);
+    border: 1px solid black;
+    border-radius: 10%;
+    width: 32px;
+    height: 24px;
+    text-align: center;
+}
